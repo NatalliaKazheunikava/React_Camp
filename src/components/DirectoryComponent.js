@@ -5,20 +5,20 @@ import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
 function RenderDirectoryItem({campsite}) {
-    return(
+    return (
         <Card>
             <Link to={`/directory/${campsite.id}`}>
-            <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
+                <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
                 <CardImgOverlay>
                     <CardTitle>{campsite.name}</CardTitle>
                 </CardImgOverlay>
             </Link>
         </Card>
-    )
+    );
 }
 
 function Directory(props) {
-    
+
     const directory = props.campsites.campsites.map(campsite => {
         return (
             <div key={campsite.id} className="col-md-5 m-1">
